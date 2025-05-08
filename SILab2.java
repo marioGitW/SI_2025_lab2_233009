@@ -49,45 +49,45 @@ class Item {
 
 public class SILab2 {
     public static double checkCart(List<Item> allItems, String cardNumber){
-        if (allItems == null){  // BLOCK 1
-            throw new RuntimeException("allItems list can't be null!"); // BLOCK 2
+        if (allItems == null){  // B1
+            throw new RuntimeException("allItems list can't be null!"); // B2
         }
 
-        double sum = 0;
+        double sum = 0; // B3
 
-        for (int i = 0; i < allItems.size(); i++){     //  BLOCK 3 ( 3.1      3.2 )   // BLOCK 11(3.3)
-            Item item = allItems.get(i);
-            if (item.getName() == null || item.getName().length() == 0){    // BLOCK 4 (4.1      4.2)
-                throw new RuntimeException("Invalid item!");    // BLOCK 5
+        for (int i = 0; i < allItems.size(); i++){     //  B4
+            Item item = allItems.get(i); // B5
+            if (item.getName() == null || item.getName().length() == 0){ // B6
+                throw new RuntimeException("Invalid item!");    // B7
             }
 
-            if (item.getPrice() > 300 || item.getDiscount() > 0 || item.getQuantity() > 10){ // BLOCK 6 (6.1   6.2   6.3)
-                sum -= 30;      // BLOCK  7
+            if (item.getPrice() > 300 || item.getDiscount() > 0 || item.getQuantity() > 10){ // B8
+                sum -= 30;      // B9
             }
 
-            if (item.getDiscount() > 0){    // BLOCK 8
-                sum += item.getPrice()*(1-item.getDiscount())*item.getQuantity();   //  BLOCK 9
+            if (item.getDiscount() > 0){    // B10
+                sum += item.getPrice()*(1-item.getDiscount())*item.getQuantity();   //  B11
             }
             else {
-                sum += item.getPrice()*item.getQuantity();  //  BLOCK 10
+                sum += item.getPrice()*item.getQuantity();  //  B12
             }
 
         }
-        if (cardNumber != null && cardNumber.length() == 16) {      // BLOCK 12 (12.1     12.2)
-            String allowed = "0123456789";
-            char[] chars = cardNumber.toCharArray();
-            for (int j = 0; j < cardNumber.length(); j++) {  // BLOCK 13 (12.1    12.2)   BLOCK 16(12.3)
-                char c = cardNumber.charAt(j);
-                if (allowed.indexOf(c) == -1) {     // BLOCK 14
-                    throw new RuntimeException("Invalid character in card number!");    // BLOCK 15
+        if (cardNumber != null && cardNumber.length() == 16) {      // B13
+            String allowed = "0123456789"; // B14
+            char[] chars = cardNumber.toCharArray(); //B15
+            for (int j = 0; j < cardNumber.length(); j++) {  // B16
+                char c = cardNumber.charAt(j); // B17
+                if (allowed.indexOf(c) == -1) {     // B18
+                    throw new RuntimeException("Invalid character in card number!");    // B19
                 }
             }
         }
         else{
-            throw new RuntimeException("Invalid card number!");     // BLOCK 17
+            throw new RuntimeException("Invalid card number!");     // B20
         }
 
-        return sum;     // BLOCK 18
+        return sum;     // B21
 
-    } // BLOCK EXIT
+    }
 }
