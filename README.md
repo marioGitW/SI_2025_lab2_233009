@@ -25,3 +25,15 @@ Mario Spasovski 233009
 на сликата подолу
 </br>
 ![MULTIPLE_CONDITION](img/multiple_conditions.png) </br> 
+
+
+Во програмата има два теста соодветно за двата критериуми. </br>
+Тестовите се спроведени во Junit5 при тоа се очекува RuntimException кога 
+листата е null, Item објект има празно име , кога број на картичка не е валиден.
+Користам assertThrow за Exception проследено со assertTrue , додека за споредба
+на вредности користев assertEquals.
+Сите можни комбинации на условот во делот од вториот критериум се покриени
+со 4 случаи , TXX - FTX - FFT - FFF
+
+![CODE_PHOTO](img/code_screenshot.png)
+
